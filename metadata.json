@@ -1,0 +1,5 @@
+{
+  "name": "URL Safety Checker",
+  "description": "A professional security-focused tool to check URLs against multiple threat intelligence providers including phish.directory, VirusTotal, and WOT.",
+  "requestFramePermissions": []
+}
