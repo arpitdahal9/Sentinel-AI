@@ -1,65 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sentinel AI - Premium Intelligence Terminal</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              maroon: {
-                50: '#fdf2f2',
-                100: '#fbe4e4',
-                200: '#f7cfcf',
-                300: '#f0acac',
-                400: '#e37d7d',
-                500: '#d35252',
-                600: '#be3838',
-                700: '#9f2b2b',
-                800: '#842626',
-                900: '#702424',
-                950: '#3d0f0f',
-              },
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-        body {
-            font-family: 'Outfit', sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-        .mono {
-            font-family: 'JetBrains Mono', monospace;
-        }
-        .premium-button {
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          position: relative;
-          overflow: hidden;
-        }
-        .premium-button:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 10px 15px -3px rgba(128, 0, 0, 0.2);
-        }
-        .premium-button:active {
-          transform: translateY(0px);
-        }
-        .glass-panel {
-          background: rgba(255, 255, 255, 0.8);
-          backdrop-filter: blur(10px);
-        }
-        .dark .glass-panel {
-          background: rgba(15, 23, 42, 0.8);
-        }
-    </style>
-<script type="importmap">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sentinel AI - Premium Intelligence Terminal</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+  </style>
+  <script type="importmap">
 {
   "imports": {
     "react": "https://esm.sh/react@^19.2.3",
@@ -68,10 +17,12 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
+  <link rel="stylesheet" href="/index.css">
 </head>
+
 <body class="bg-[#f8f9fa] text-slate-900 transition-colors duration-200 dark:bg-slate-950 dark:text-slate-100">
-    <div id="root"></div>
-<script type="module" src="/index.tsx"></script>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
 </body>
+
 </html>
