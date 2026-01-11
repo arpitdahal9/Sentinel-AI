@@ -155,8 +155,8 @@ const ArchitectureSection: React.FC = () => {
         ].map((step, idx) => (
           <div key={idx} className="relative z-10 flex flex-col items-center group">
             <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-5 transition-all duration-700 shadow-2xl ${step.primary
-                ? 'bg-maroon-800 text-white scale-125 shadow-maroon-900/40 outline outline-4 outline-maroon-600/10'
-                : 'bg-white dark:bg-slate-900 text-slate-400 group-hover:text-maroon-600 border border-slate-100 dark:border-slate-800 shadow-slate-200/50'
+              ? 'bg-maroon-800 text-white scale-125 shadow-maroon-900/40 outline outline-4 outline-maroon-600/10'
+              : 'bg-white dark:bg-slate-900 text-slate-400 group-hover:text-maroon-600 border border-slate-100 dark:border-slate-800 shadow-slate-200/50'
               }`}>
               <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={step.icon} />
@@ -168,23 +168,6 @@ const ArchitectureSection: React.FC = () => {
         ))}
       </div>
 
-      {/* Footer Credits */}
-      <footer className="mt-48 pb-16 text-center space-y-8">
-        <div className="flex flex-col items-center gap-3">
-          <p className="text-[11px] font-black uppercase tracking-[0.3em] text-slate-400">
-            Developed by <span className="text-maroon-700 dark:text-maroon-500">Sentinel Intelligence</span>
-          </p>
-          <p className="text-[10px] font-bold text-slate-400/80 dark:text-slate-600 max-w-lg leading-relaxed uppercase tracking-widest">
-            This service is powered by the VirusTotal v3 API. By utilizing this terminal, you benefit from the aggregated intelligence of over 70 premier security vendors worldwide.
-          </p>
-        </div>
-        <div className="flex justify-center gap-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-1000">
-          <div className="flex items-center gap-2 text-slate-400 font-black tracking-tight text-xs uppercase">
-            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" /></svg>
-            VirusTotal API v3
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
@@ -239,10 +222,9 @@ const App: React.FC = () => {
             Ultimate threat intelligence terminal. Detect malware, phishing, and security breaches with global cloud analysis.
           </p>
 
-          {/* Mode Switcher */}
           <div className="flex justify-center pt-8">
             <div className="flex border-b border-slate-200 dark:border-slate-800 w-full max-w-2xl">
-              {(['file', 'url', 'search'] as ScannerMode[]).map((m) => (
+              {(['url', 'search', 'file'] as ScannerMode[]).map((m) => (
                 <button
                   key={m}
                   onClick={() => setState(p => ({ ...p, mode: m, result: null, input: '', error: null }))}
@@ -410,9 +392,26 @@ const App: React.FC = () => {
           )}
         </main>
 
-        <ContentSection />
         <ArchitectureSection />
+        <ContentSection />
       </div>
+
+      <footer className="mt-48 pb-16 text-center space-y-8 relative z-10">
+        <div className="flex flex-col items-center gap-3">
+          <p className="text-[11px] font-black uppercase tracking-[0.3em] text-slate-400">
+            Developed by <span className="text-maroon-700 dark:text-maroon-500">Sentinel Intelligence</span>
+          </p>
+          <p className="text-[10px] font-bold text-slate-400/80 dark:text-slate-600 max-w-lg leading-relaxed uppercase tracking-widest">
+            This service is powered by the VirusTotal v3 API. By utilizing this terminal, you benefit from the aggregated intelligence of over 70 premier security vendors worldwide.
+          </p>
+        </div>
+        <div className="flex justify-center gap-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-1000">
+          <div className="flex items-center gap-2 text-slate-400 font-black tracking-tight text-xs uppercase">
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" /></svg>
+            VirusTotal API v3
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
